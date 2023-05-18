@@ -64,7 +64,7 @@ form .input .error::after {
 
 form input {
     width: 100%;
-    background-color: #23272e;
+    background-color: var(--body-bc);
     border-radius: 4px;
     border: none;
     padding: 10px;
@@ -91,7 +91,7 @@ input[type="file"] {
 
 .input .upIm {
     width: 100%;
-    background-color: #23272e;
+    background-color: var(--body-bc);
     border-radius: 0px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -120,7 +120,7 @@ form .btnChange {
     margin: 10px auto;
     border: none;
     outline: none;
-    background-color: #23272e;
+    background-color: var(--body-bc);
     border-radius: 5px;
     padding: 5px 15px 3px;
     text-align: center;
@@ -207,7 +207,7 @@ form .input .img img {
 }
 
 .option {
-    background-color: #23272e;
+    background-color: var(--body-bc);
     height: 100%;
     width: 100%;
     display: flex;
@@ -231,8 +231,7 @@ input[type="radio"] {
 
 #admin:checked:checked~.admin,
 #user:checked:checked~.user {
-    border-color: #0069d9;
-    background: #0069d9;
+    background: var(--mini-black);
 }
 
 .option span {
@@ -243,5 +242,6 @@ input[type="radio"] {
 #admin:checked:checked~.admin span,
 #user:checked:checked~.user span {
     font-weight: 600;
+    font-size: 1.4em;
     color: var(--beuty-white);
 }

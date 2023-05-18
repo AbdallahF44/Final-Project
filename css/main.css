@@ -7,6 +7,7 @@
     --mini-black: #1e2227;
     --beuty-white: #eaf0f2;
     --beuty-blue: #363f4a;
+    --body-bc: #23272e;
 }
 
 * {
@@ -19,7 +20,7 @@
 
 body {
     font-family: font;
-    background-color: #23272e;
+    background-color: var(--body-bc);
     color: var(--beuty-white);
 }
 
@@ -36,7 +37,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #232533;
+    background-color: var(--body-bc);
 }
 
 ul {
@@ -205,7 +206,7 @@ textarea:focus {
 
 
 .header .con.active ul li:hover a {
-    background-color: #23272e;
+    background-color: var(--body-bc);
     padding: 10px 25px;
 }
 
@@ -277,7 +278,7 @@ textarea:focus {
 }
 
 .contianer tbody tr:hover td {
-    background-color: #23272e;
+    background-color: var(--body-bc);
 }
 
 .contianer table img {
