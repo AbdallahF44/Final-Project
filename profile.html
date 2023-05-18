@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <title>Profile | Abdallah</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body style="position: relative;">
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-a a"></i>
+            <i class="fa-solid fa-4 four"></i>
+        </div>
+        <div class="user con ch">
+            <span class="ch"><img src="images/admin.jfif" alt="" class="ch"><i
+                    class="fa-solid fa-angle-down ch"></i></span>
+            <ul>
+                <li class=""><a href="manage_user.html">Home</a></li>
+                <li class=""><a target="_blank" href="logInPage.html">LogOut</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="contianer profile">
+        <h3>Hi Abdallah (●'◡'●)</h3>
+        <div class="data-con">
+            <div class="imgAndBtns">
+                <div class="img">
+                    <img src="images/admin.jfif" alt="">
+                </div>
+                <div class="btns">
+                    <a class="can update" style="--number-bc-color:rgb(17, 167, 167);">Update Data</a>
+                    <a class="cannot change" style="--number-bc-color:rgb(115, 77, 253);">Change Password</a>
+                    <a class="can delete" style="--number-bc-color:rgb(201, 38, 38);">Delete</a>
+                </div>
+            </div>
+            <div class="data">
+                <h4>Abdallah</h4>
+                <span>Email : abdallahfawziabumostafa@gmailcom</span>
+                <div class="role">Role : Admin</div>
+                <div class="roles">
+                    <ul>- Some Roles u can use :
+                        <li>Change your password.</li>
+                        <li>Update your data.</li>
+                        <li>Delete your account.</li>
+                        <li>Change any user password.</li>
+                        <li>Update any user data.</li>
+                        <li>Delete any user account.</li>
+                        <li>Set any user as admin.</li>
+                    </ul>
+                    <!-- <ul>Some Roles u can use :
+                        <li>Change your password.</li>
+                        <li>Update your data.</li>
+                        <li>Delete your accont.</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="created">
+            <span>Developed by : </span>
+            <span>Abdallah Fawzi <i class="fa-solid fa-heart hc"></i></span>
+        </div>
+        <div class="contact">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100043098108008"><i
+                    style="--bc-color:#337ab7;" class="fa-brands fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/abdallahf44/"><i style="--bc-color:#337ab7;"
+                    class="fa-brands fa-instagram hc"></i></a>
+            <a target="_blank" href="mailto:abdallahfawziabumostafa@gmail.com"><i style="--bc-color:#333;"
+                    class="fa-regular fa-envelope"></i></a>
+            <a target="_blank" href="https://github.com/AbdallahF44"><i style="--bc-color:#f90;"
+                    class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
+    <div class="deleting-dilog">
+        <div class="deleting-dilog-cont sec">
+            <span>Are you sure you want to delete this account ?</span>
+            <div class="btns">
+                <button class="delete">Delete</button>
+                <button class="close">Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let links = document.querySelector(".con");
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.classList.contains("ch")) {
+                links.classList.remove("active");
+                // console.log(e.target);
+            }
+        });
+
+        links.addEventListener("click", () => {
+            links.classList.toggle("active");
+            // if (e.classList.contains("active")) {
+            // links.forEach((e2) => {
+            //     e2.classList.remove("active");
+            // });
+            //    e.classList.add("active");
+            // }
+        });
+
+        let updateBtn = document.querySelector(".btns .update");
+        updateBtn.addEventListener("click", () => {
+            if (updateBtn.classList.contains("cannot"))
+                alert("You cannot ubdate data :\n  -- because it is not yours (¬‿¬)!\n  -- and you are not admin (¬‿¬)!");
+        });
+
+        let changeBtn = document.querySelector(".btns .change");
+        changeBtn.addEventListener("click", () => {
+            if (changeBtn.classList.contains("cannot"))
+                alert("You cannot change password :\n  -- because it is not yours (¬‿¬)!\n  -- and you are not admin (¬‿¬)!");
+        });
+
+        let delBtn = document.querySelector(".btns .delete");
+        delBtn.addEventListener("click", () => {
+            if (delBtn.classList.contains("cannot"))
+                alert("You cannot delete this account :\n  -- because it is not yours (¬‿¬)!\n  -- and you are not admin (¬‿¬)!");
+            else {
+                let dilogDeleteing = document.querySelector(".deleting-dilog");
+                let dilogDeleteBtn = document.querySelector(
+                    ".deleting-dilog .deleting-dilog-cont .delete"
+                );
+                let dilogCloseBtn = document.querySelector(
+                    ".deleting-dilog .deleting-dilog-cont .close"
+                );
+                dilogDeleteing.style.display = "block";
+                dilogCloseBtn.onclick = () => {
+                    dilogDeleteing.style.display = "none";
+                };
+                dilogDeleteBtn.onclick = () => {
+                    // php code ...
+                    dilogDeleteing.style.display = "none";
+                    setTimeout(() => {
+                        window.alert("Done!");
+                    }, 1000);
+                };
+            }
+        });
+    </script>
+</body>
+
+</html>

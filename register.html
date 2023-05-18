@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+</head>
+
+<body class="">
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-a a"></i>
+            <i class="fa-solid fa-4 four"></i>
+        </div>
+        <div class="reg">
+            <a href="log_in_page.html">Log In</a>
+        </div>
+    </div>
+    <div class="contianer">
+        <form>
+            <div class="input">
+                <label for="name">Your Name :</label>
+                <input id="name" name="name" type="text" placeholder="Name ..." required />
+                <span class="error">Something wrong</span>
+            </div>
+            <div class="input">
+                <label for="email">Your Email :</label>
+                <input id="email" name="email" type="email" placeholder="Email ..." required />
+                <span class="error">Something wrong</span>
+            </div>
+            <div class="input">
+                <label title="More than 8 letters. Incluse lower, upper letters and numbers. " for="password">
+                    Your Password :
+                    <i class="fa-solid fa-circle-info" style="margin-left: 10px;height: 100%;"></i>
+                </label>
+                <input id="password" name="password" type="password" placeholder="Password ..." required />
+                <span class="error">Something wrong</span>
+            </div>
+            <div class="input">
+                <label for="conPass">Confirm Password :</label>
+                <input id="conPass" name="conPass" type="password" placeholder="Confirm Password ..." required />
+                <span class="error">Something wrong</span>
+            </div>
+            <div class="input">
+                <label title="If you don't upload image, a defualt image will be set !" for="image">Enter Image :
+                    <i class="fa-solid fa-circle-info" style="margin-left: 10px;height: 100%;"></i>
+                </label>
+                <label for="image" class="upIm">Upload Image</label>
+                <input id="image" name="image" value="Choose Image" type="file" accept="image/*" required />
+                <span class="error">Something wrong</span>
+            </div>
+            <input type="submit" value="Sign Up" name="submit" class="btnLogIn">
+            <div class="togglePage">
+                <span> Have account ? </span>
+                <a href="log_in_page.html">Log In</a>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="created">
+            <span>Developed by : </span>
+            <span>Abdallah Fawzi <i class="fa-solid fa-heart hc"></i></span>
+        </div>
+        <div class="contact">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100043098108008"><i
+                    style="--bc-color:#337ab7;" class="fa-brands fa-facebook-f"></i></a>
+            <a target="_blank" href="https://www.instagram.com/abdallahf44/"><i style="--bc-color:#337ab7;"
+                    class="fa-brands fa-instagram hc"></i></a>
+            <a target="_blank" href="mailto:abdallahfawziabumostafa@gmail.com"><i style="--bc-color:#333;"
+                    class="fa-regular fa-envelope"></i></a>
+            <a target="_blank" href="https://github.com/AbdallahF44"><i style="--bc-color:#f90;"
+                    class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            document.querySelector(".contianer .input #name").focus();
+        }
+    </script>
+</body>
+
+</html>
