@@ -1,13 +1,13 @@
 @font-face {
     font-family: font;
-    src: url(../fonts/Cairo-VariableFont_slnt\,wght.ttf);
+    src: url(../fonts/Cairo-VariableFont_slnt,wght.ttf);
 }
 
 :root {
-    --mini-black: #1e2227;
-    --beuty-white: #eaf0f2;
-    --beuty-blue: #363f4a;
-    --body-bc: #23272e;
+    --mini-black: #247b7b;
+    --beuty-white: #242424;
+    --beuty-blue: #50acac;
+    --body-bc: #c1c4c7;
 }
 
 * {
@@ -19,6 +19,16 @@
 
 
 body {
+    font-family: font;
+    background-color: var(--body-bc);
+    color: var(--beuty-white);
+}
+
+body.dark {
+    --mini-black: #1e2227;
+    --beuty-white: #eaf0f2;
+    --beuty-blue: #363f4a;
+    --body-bc: #23272e;
     font-family: font;
     background-color: var(--body-bc);
     color: var(--beuty-white);
@@ -67,11 +77,34 @@ textarea:focus {
     width: 100%;
     background-color: var(--mini-black);
     /* background-color: #223; */
-    padding: 0px 100px;
+    padding: 0px 150px;
     user-select: none;
     position: relative;
 }
 
+
+.dark-mode-toggle {
+    transition: 0.5s;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--beuty-white);
+}
+
+
+.dark-mode-toggle i {
+    cursor: pointer;
+    transition: 1s;
+}
+
+.dark-mode-toggle i:hover {
+    color: #999;
+    text-shadow: 0 0 5px #777, 0 0 10px #777;
+}
+
+.dark .dark-mode-toggle i:hover {
+    color: rgb(255, 252, 102);
+    text-shadow: 0 0 5px rgb(255, 242, 10), 0 0 10px rgb(255, 242, 10);
+}
 
 .header .logo {
     font-size: 2em;
@@ -100,7 +133,7 @@ textarea:focus {
 }
 
 .header:hover .logo .four {
-    color: #fff;
+    color: var(--beuty-white);
 }
 
 
@@ -110,7 +143,7 @@ textarea:focus {
 }
 
 .header .logo:hover .four {
-    color: #fff;
+    color: var(--beuty-white);
 }
 
 .header .logo:hover {
@@ -210,17 +243,23 @@ textarea:focus {
     padding: 10px 25px;
 }
 
-.contianer {
-    margin: 50px 100px;
+.container {
+    margin: 50px auto;
     padding: 50px 50px 70px;
     background-color: var(--beuty-blue);
     text-align: center;
     border-radius: 5px;
+    max-width: 1000px;
+    position: relative;
 }
 
-.contianer h3 {
+.container.profile {
+    width: 1000px;
+}
+
+.container h3 {
     text-align: center;
-    padding: 0 20px 50px;
+    padding: 10px 20px 10px;
     font-size: 3em;
     user-select: none;
     color: var(--beuty-white);
@@ -228,60 +267,66 @@ textarea:focus {
     transition: 0.3s;
 }
 
-.contianer:hover h3 {
+.container:hover h3 {
     letter-spacing: 7px;
 }
 
-.contianer table {
-    min-width: 1000px;
+.container table {
+    min-width: 900px;
     width: 100%;
     border-spacing: 0;
     margin: auto;
     color: var(--beuty-white);
 }
 
-.contianer thead td {
+.container thead td {
     background-color: var(--beuty-blue);
     font-weight: bold;
     /* border: 1px solid var(--beuty-white); */
 }
 
-.contianer table td {
+.container table td {
     padding: 15px;
     font-size: 1.2em;
 }
 
-.contianer table tr td:nth-child(1) {
+.container table tr td:nth-child(1) {
     width: 50px;
 }
 
-.contianer table tr td:nth-child(2) {
+.container table tr td:nth-child(2) {
     padding: 20px 15px 10px;
     text-align: center;
     width: 50px;
 }
 
-.contianer thead td {
+.container table tr td:nth-child(3) {
+    padding: 20px 15px 10px;
+    text-align: center;
+    width: 50px;
+}
+
+.container thead td {
     border-top: 1px solid var(--beuty-white);
 }
 
-.contianer thead td,
-.contianer tbody td {
+.container thead td,
+.container tbody td {
     border-bottom: 1px solid var(--beuty-white);
     border-left: 1px solid var(--beuty-white);
     transition: 0.3s;
 }
 
-.contianer table thead tr td:last-child,
-.contianer table tbody tr td:last-child {
+.container table thead tr td:last-child,
+.container table tbody tr td:last-child {
     border-right: 1px solid var(--beuty-white);
 }
 
-.contianer tbody tr:hover td {
+.container tbody tr:hover td {
     background-color: var(--body-bc);
 }
 
-.contianer table img {
+.container table img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -289,10 +334,10 @@ textarea:focus {
     background-color: #fff;
 }
 
-.contianer table td a {
+.container table td a {
     display: inline-block;
     /* background-color: var(--number-bc-color); */
-    background-image: linear-gradient(90deg, var(--number-bc-color), var(--mini-black));
+    background-image: linear-gradient(60deg, var(--number-bc-color), var(--mini-black));
     border-radius: 5px;
     padding: 0px 15px 3px;
     color: #fff;
@@ -305,16 +350,18 @@ textarea:focus {
     user-select: none;
 }
 
-.contianer table td a.cannot {
+.container table td a.cannot {
     opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
 }
 
-.contianer table a.can:hover {
+.container table a.can:hover {
     box-shadow: 0 0 3px var(--mini-black), 3px 3px 8px var(--mini-black);
     transform: translate(-3px, -3px);
 }
 
-.contianer .data-con {
+.container .data-con {
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -322,7 +369,7 @@ textarea:focus {
     margin-top: 50px;
 }
 
-.contianer .data-con .imgAndBtns {
+.container .data-con .imgAndBtns {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -330,16 +377,16 @@ textarea:focus {
     user-select: none;
 }
 
-.contianer .data-con .imgAndBtns .btns {
+.container .data-con .imgAndBtns .btns {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.contianer .data-con .imgAndBtns .btns a {
+.container .data-con .imgAndBtns .btns a {
     display: inline-block;
     /* background-color: var(--number-bc-color); */
-    background-image: linear-gradient(90deg, var(--number-bc-color), var(--mini-black));
+    background-image: linear-gradient(60deg, var(--number-bc-color), var(--mini-black));
     border-radius: 5px;
     padding: 3px 15px 3px;
     color: #fff;
@@ -351,28 +398,29 @@ textarea:focus {
     margin: auto;
 }
 
-.contianer .data-con .imgAndBtns .btns a.cannot {
-    opacity: 0.5;
+.container .data-con .imgAndBtns .btns a.cannot {
+    display: none;
 }
 
-.contianer .data-con .imgAndBtns .btns a.can:hover {
+.container .data-con .imgAndBtns .btns a.can:hover {
     box-shadow: 0 0 3px var(--mini-black), 3px 3px 8px var(--mini-black);
     transform: translate(-3px, -3px);
 }
 
-.contianer .data-con .img {
+.container .data-con .img {
     border-radius: 20px;
     overflow: hidden;
     width: 250px;
     height: 250px;
+    box-shadow: -10px 10px 5px var(--mini-black), -10px -10px 5px var(--beuty-white);
 }
 
-.contianer .data-con .img img {
+.container .data-con .img img {
     width: 100%;
     height: 100%;
 }
 
-.contianer .data-con .data {
+.container .data-con .data {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -380,7 +428,7 @@ textarea:focus {
 }
 
 
-.contianer .data-con .data h4 {
+.container .data-con .data h4 {
     font-size: 3em;
     font-weight: 600;
     margin: 0px auto 20px;
@@ -391,30 +439,35 @@ textarea:focus {
 
 
 
-.contianer .data-con .data span,
-.contianer .data-con .data .role {
+.container .data-con .data span,
+.container .data-con .data .role {
     font-size: 1.1em;
     padding-left: 10px;
     background-image: linear-gradient(90deg, var(--mini-black), var(--beuty-blue));
     border-radius: 7px;
 }
 
-.contianer .data-con .data ul {
+.container .data-con .data ul {
     font-size: 1.2em;
     color: rgb(73, 197, 97);
     line-height: 1.5;
     border-radius: 10px;
+    padding: 10px;
     background-image: linear-gradient(90deg, rgb(14, 48, 21), var(--beuty-blue));
 
 }
 
-.contianer .data-con .data ul li {
+.container .data-con .data ul li {
     text-align: left;
     margin-left: 50px;
     position: relative;
 }
 
-.contianer .data-con .data ul li::before {
+.container .data-con .data ul li.hide {
+    display: none;
+}
+
+.container .data-con .data ul li::before {
     content: "->";
     position: absolute;
     top: 0;
@@ -425,30 +478,23 @@ textarea:focus {
     font-weight: 600;
 }
 
-.deleting-dilog {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.deleting-dialog {
     background-color: #00000088;
     z-index: 1000;
-    display: none;
+    border-radius: 5px;
     transition: 0.5s;
+    margin: 80px;
 }
 
 
-.deleting-dilog .deleting-dilog-cont {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.deleting-dialog .deleting-dialog-cont {
     width: fit-content;
     height: fit-content;
     background-color: var(--beuty-blue);
     z-index: 1000;
-    border-radius: 20px;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2), 0px 0px 15px rgba(255, 255, 255, 0.2), 0px 0px 25px rgba(255, 255, 255, 0.2), 0px 0px 35px rgba(255, 255, 255, 0.2), 0px 0px 45px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2), 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 0px 25px rgba(255, 255, 255, 0.2), 0px 0px 35px rgba(255, 255, 255, 0.2), 0px 0px 45px rgba(255, 255, 255, 0.2); */
+    box-shadow: 0px 0px 5px var(--mini-black), 0px 0px 10px var(--mini-black), 0px 0px 25px var(--mini-black), 0px 0px 35px var(--mini-black), 0px 0px 45px var(--mini-black);
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -457,23 +503,23 @@ textarea:focus {
     gap: 30px;
 }
 
-.deleting-dilog .deleting-dilog-cont span {
-    color: rgb(236, 63, 63);
+.deleting-dialog .deleting-dialog-cont span {
+    color: rgb(201, 38, 38);
     font-size: 1.2em;
     font-weight: 600;
 }
 
-.deleting-dilog .deleting-dilog-cont .btns {
+.deleting-dialog .deleting-dialog-cont .btns {
     display: flex;
     gap: 20px;
 }
 
-.deleting-dilog .deleting-dilog-cont button {
+.deleting-dialog .deleting-dialog-cont button {
     border: none;
     outline: none;
     border-radius: 5px;
     padding: 5px 10px 3px;
-    color: var(--white);
+    color: var(--beuty-white);
     font-size: 1.1em;
     cursor: pointer;
     font-weight: 600;
@@ -484,19 +530,19 @@ textarea:focus {
     transition: 0.3s;
 }
 
-.deleting-dilog .deleting-dilog-cont button:hover {
+.deleting-dialog .deleting-dialog-cont button:hover {
     box-shadow: 0 0 3px var(--mini-black), 3px 3px 8px var(--mini-black);
     transform: translate(-3px, -3px);
 }
 
-.deleting-dilog .deleting-dilog-cont button:nth-child(1) {
-    background-color: rgb(201, 38, 38);
-    color: var(--white);
+.deleting-dialog .deleting-dialog-cont button:nth-child(1) {
+    background-image: linear-gradient(60deg, rgb(201, 38, 38), var(--mini-black));
+    color: var(--beuty-white);
 }
 
-.deleting-dilog .deleting-dilog-cont button:nth-child(2) {
+.deleting-dialog .deleting-dialog-cont button:nth-child(2) {
     background-color: var(--mini-black);
-    color: var(--black);
+    color: var(--beuty-white);
 }
 
 .footer {

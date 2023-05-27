@@ -1,3 +1,9 @@
+@media (max-width: 1040px) {
+    .container.profile {
+        width: fit-content;
+    }
+}
+
 @media (max-width: 992px) {
     ::-webkit-scrollbar {
         width: 15px;
@@ -11,7 +17,7 @@
         font-size: 0.71em;
     }
 
-    .contianer {
+    .container {
         margin: 50px 50px;
     }
 
@@ -23,7 +29,13 @@
         font-size: 1.1em;
     }
 
-    .contianer .data-con .imgAndBtns .btns {
+    .container .data-con {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .container .data-con .imgAndBtns .btns {
         /* flex-direction: column; */
         font-size: 0.9em;
     }
@@ -47,16 +59,16 @@
         left: -30px;
     }
 
-    .contianer {
+    .container {
         margin: 30px;
     }
 
-    .contianer h3 {
+    .container h3 {
         margin-top: 40px;
         font-size: 2.5em;
     }
 
-    .contianer table td {
+    .container table td {
         font-size: 1.1em;
     }
 
@@ -64,10 +76,17 @@
         font-size: 1em;
     }
 
-    .contianer .data-con {
-        flex-direction: column;
-        gap: 30px;
-        margin-top: 30px;
+    .searchCon form input[type="submit"] {
+        font-size: 1em;
+        padding: 11px;
+    }
+
+    .container .search {
+        top: 118px !important;
+    }
+
+    .deleting-dialog {
+        margin: 50px;
     }
 
     .footer {
@@ -87,29 +106,58 @@
         padding: 0px 20px;
     }
 
-    .contianer {
+    .container {
         margin: 15px;
     }
 
-    .contianer.profile {
+    .container.profile {
         padding: 20px;
     }
 
-    .contianer h3 {
-        margin-top: 90px;
+    .container h3 {
+        margin-top: 50px;
+        padding: 10px 20px 20px;
         font-size: 2em;
     }
 
-    .contianer.profile h3 {
+    .deleting-dialog {
+        margin: 50px;
+    }
+
+    .container.profile h3 {
         font-size: 1.5em;
     }
 
-    .contianer table td {
+    .container.profile:hover h3 {
+        letter-spacing: 1px;
+    }
+
+    .container table td {
         font-size: 1em;
     }
 
     form .togglePage {
         font-size: 0.9em;
+    }
+
+    .searchCon form {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .searchCon form input[type="text"] {
+        font-size: 1em;
+        width: 100% !important;
+    }
+
+    .searchCon form input[type="submit"] {
+        font-size: 0.9em;
+        padding: 12px;
+        width: 50% !important;
+    }
+
+    .container .search {
+        top: 120px !important;
     }
 
     .footer {
