@@ -53,7 +53,7 @@ class User
         while ($row = mysqli_fetch_assoc($res)) {
             if ($em == $row['email'])
                 return 'Email is already exist in database!';
-            $idForNewUser++;
+            $idForNewUser = $row['id'] + 1;
         }
         // the id that after the last id in db
         return $idForNewUser;
@@ -203,7 +203,7 @@ class User
         if (!is_int($emailError))
             $errors["email"] = $emailError;
         else
-            $idForNewUser = $emailError + 1;
+            $idForNewUser = $emailError;
 
         // validate password
         $passwordError = $this->checkNewPassword($pw);
