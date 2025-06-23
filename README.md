@@ -38,25 +38,26 @@ Final Project/
 ├── updateData.php       # User data update handler
 └── README.md            # Project documentation (this file)
 ```
-Installation
-Clone the repository:
+##Installation
+1- Clone the repository:
 
-git clone https://github.com/YourUsername/Final-Project.git
-Import the provided database to your local MySQL server.
+2- git clone https://github.com/YourUsername/Final-Project.git
 
-Configure your database connection in the project files (usually in a config or connection file).
+3- Import the provided database to your local MySQL server.
 
-Run the project using a local server like XAMPP or WAMP.
+4- Configure your database connection in the project files (usually in a config or connection file).
 
-Notes
-The project uses native PHP sessions for authentication.
+5- Run the project using a local server like XAMPP or WAMP.
 
-Basic input validation is applied.
+##Notes
+. The project uses native PHP sessions for authentication.
 
-Can be extended to include more security measures like password hashing using password_hash().
+. Basic input validation is applied.
 
-Author
+. Can be extended to include more security measures like password hashing using password_hash().
+
+##Author
 Abdallah Fawzi
 
-License
+##License
 This project is licensed for educational and personal use
