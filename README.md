@@ -37,12 +37,10 @@ Final Project/
 ├── searchPage.php       # User search functionality
 ├── updateData.php       # User data update handler
 └── README.md            # Project documentation (this file)
+```
 Installation
 Clone the repository:
 
-bash
-Copy
-Edit
 git clone https://github.com/YourUsername/Final-Project.git
 Import the provided database to your local MySQL server.
 
