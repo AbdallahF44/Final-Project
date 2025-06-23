@@ -40,7 +40,7 @@ Final Project/
 ```
 ## Installation
 - Clone the repository:
-- git clone https://github.com/YourUsername/Final-Project.git
+- **git clone https://github.com/YourUsername/Final-Project.git**
 - Import the provided database to your local MySQL server.
 - Configure your database connection in the project files (usually in a config or connection file).
 - Run the project using a local server like XAMPP or WAMP.
